@@ -1,0 +1,52 @@
+<div class="ticket">
+    <img class="logo" src="../../assets/image/download.png">
+    <br><br>
+    <h1 style="font-weight:900;">New ticket</h1>
+    <div><button class="btn btn-primary" id="button" routerLink="/Myticketlist">Back to ticket list</button></div>
+    <form [formGroup]="issueForm"  (ngSubmit)="onsubmit()" >
+
+        <label class="label">Username:</label>
+        <input class="input" type=text formControlName="username" readonly>
+        <br><br>
+        <label>Subject</label>
+        <br>
+        <input type="text" placeholder="Subject" formControlName="subject"
+            [ngClass]="{ 'is-invalid': submitted && f['subject'].errors }" /><br>
+        <div *ngIf="submitted && f['subject'].errors" class="invalid-feedback">
+            <div *ngIf="f['subject'].errors['required']">Subject is required</div>
+        </div><br>
+        <label>Department</label>
+        <select formControlName="department" class="form-select" aria-label="Default select example"
+            [ngClass]="{ 'is-invalid': submitted && f['department'].errors }">
+            <option value="Developer">Developer</option>
+            <option value="Admin">Admin</option>
+        </select>
+        <div *ngIf="submitted && f['department'].errors" class="invalid-feedback">
+            <div *ngIf="f['department'].errors['required']">Department is required</div>
+        </div><br>
+        <label>Description</label><br>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="description"
+            [ngClass]="{ 'is-invalid': submitted && f['description'].errors }"></textarea>
+        <div *ngIf="submitted && f['description'].errors" class="invalid-feedback">
+            <div *ngIf="f['description'].errors['required']">Description is required</div>
+        </div><br>
+
+        <div class="mb-3">
+            <label class="custom-file-label" for="inputGroupFile01"  >Select File:</label><br>
+            <input type="file" (change)="onchange($event)" class="form-control" formControlName="filename"  >
+        </div>
+        <!-- <div class="container text-center jumbotron" *ngIf="shortLink">
+            <h2>Visit Here</h2>
+            <a href="{{ shortLink }}">{{ shortLink }}</a>
+          </div> -->
+
+        <button  class="btn btn-success">Create ticket</button>
+    </form>
+</div>
+<div class="dropdown" id="usericon">
+    <span><i class="fa fa-user" style="font-size:36px"></i></span>
+    <div class="dropdown-content">
+        <p class="p"><i class="fa fa-user" style="font-size:15px"></i> {{user}}</p>
+        <p (click)="onLogout()"><i class="fa fa-sign-out"></i>Logout</p>
+    </div>
+</div>

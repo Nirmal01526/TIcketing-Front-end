@@ -1,0 +1,25 @@
+ .row {
+    margin-top: -45%;
+    margin-left: 300px;
+}
+
+ .heading {
+    top: 0;
+    font-family: 'Times New Roman', Times, serif;
+}.head{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+p {margin-top: 15%;
+    margin-left: 40%;
+    font-size: 50px;
+    color: rgb(3, 3, 3);
+}
+
+.card-header {
+    color: rgb(17, 17, 17);
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    border-color: rgb(13, 13, 14);
+}   

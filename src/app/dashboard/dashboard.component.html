@@ -1,0 +1,78 @@
+<nav id="nav" class="navbar navbar-dark ">
+    <div>
+        <h2 class="support">Support Ticketing System</h2>
+    </div>
+    <div>
+        <h2 class="support1">{{user}}</h2>
+    </div>
+</nav>
+<div class="row">
+    <div class="col-2">
+        <div class="sidebar">
+            <div class="Heading"><br>
+                <span class="title">Company Name</span><br><br><br>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="sidebart">
+                        <a href="/homedashboard" class="nav-link px-0 align-middle ">
+                         <span class="ms-1 d-none d-sm-inline">Dashboard</span></a>
+                    </li>
+                    <li class="sidebart">
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Staff</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+                            <div><br>
+                                <li class="w-100">
+                                    <a href="/Register" class="nav-link px-5"> <span
+                                            class="d-none d-sm-inline">AddStaff</span></a>
+                                </li>
+                                <li class="w-100">
+                                    <a href="/table" class="nav-link px-5"> <span
+                                            class="d-none d-sm-inline">StaffList</span></a>
+                                </li>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="sidebart">
+                        <a href="#submenu6" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Customer</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu6" data-bs-parent="#menu">
+                            <li class="w-100"><br>
+                                <a href="/CustomerRegister" class="nav-link px-5"> <span
+                                        class="d-none d-sm-inline">Addcustomer</span></a>
+                                <a href="/Customerlist" class="nav-link px-5"> <span
+                                        class="d-none d-sm-inline">CustomerList</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebart">
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Ticket</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            <li class="w-100"><br>
+                                <a href="/showTicket" class="nav-link px-5"> <span
+                                        class="d-none d-sm-inline">TicketList</span> </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebart">
+                        <a href="#submenu4" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Report</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu4" data-bs-parent="#menu">
+                            <li class="w-100"><br>
+                                <a href="/showTicket" class="nav-link px-5"> <span
+                                        class="d-none d-sm-inline">TicketList</span></a>
+                            </li>
+                            <li class="w-100">
+                                <a href="#" class="nav-link px-5"> <span
+                                        class="d-none d-sm-inline">CustomerList</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="logout ">
+                    <p class="button" (click)="onLogout()">Logout</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

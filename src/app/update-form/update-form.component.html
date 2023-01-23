@@ -1,0 +1,65 @@
+<app-dashboard></app-dashboard>
+
+<div class="login">
+    <div class="register-form" id="form">
+        <form [formGroup]="updateForm" (ngSubmit)="onSubmit()" id="form">
+            <div class="form-group " id="input">
+                <input type="text" formControlName="id" class="form-control">
+            </div>
+            <div class="form-group ">
+                <label>Username</label><br>
+                <input type="text" formControlName="username" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f['username'].errors }">
+                <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+                    <div *ngIf="f['username'].errors['required']">Username is required</div>
+                    <div *ngIf="f['username'].errors['minlength']">
+                        Username must be at least 6 characters
+                    </div>
+                    <div *ngIf="f['username'].errors['maxlength']">
+                        Username must not exceed 20 characters
+                    </div>
+                </div>
+            </div> <br>
+            <div class="form-group ">
+                <label>Email</label><br>
+                <input type="text" formControlName="email" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+                <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                    <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                </div>
+            </div><br>
+            <div class="form-group ">
+                <label>DOB</label><br>
+                <input type="text" formControlName="dob" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f['dob'].errors }">
+                <div *ngIf="submitted && f['dob'].errors" class="invalid-feedback">
+                    <div *ngIf="f['dob'].errors['required']">Date Of BIrth is required</div>
+                </div>
+            </div> <br>
+            <div class="form-group ">
+                <select formControlName="role" class="form-select" aria-label="Default select example"
+                    [ngClass]="{ 'is-invalid': submitted && f['role'].errors }">
+                    <option value="Staff">Staff</option>
+                    <option value="Customer">Customer</option>
+                </select>
+                <div *ngIf="submitted && f['role'].errors" class="invalid-feedback">
+                    <div *ngIf="f['role'].errors['required']">Role is required</div>
+                </div>
+            </div><br>
+            <div class="form-group ">
+                <label>MobileNo</label><br>
+                <input type="text" formControlName="mobileNo" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f['mobileNo'].errors }">
+                <div *ngIf="submitted && f['mobileNo'].errors" class="invalid-feedback">
+                    <div *ngIf="f['mobileNo'].errors['required']">MobileNumber is required</div>
+                </div>
+            </div><br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <h1 class="heading">Update Form</h1>
+    </div>

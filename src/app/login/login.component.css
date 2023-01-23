@@ -1,0 +1,30 @@
+p {
+  font-family: Lato;
+}
+
+#root {
+  padding: 30px;
+}
+
+.register-form {
+  max-width: 350px;
+  margin: auto;
+}
+
+.login {
+  margin-left: 36%;
+  background-color: rgb(245, 244, 247);
+  margin-top: -38%;
+  border-radius: 5%;
+  padding: 3%;
+  width: 400px;
+  position: absolute;
+}
+
+.para {
+  text-align: center;
+}
+
+.c2 {
+  text-align: center;
+}

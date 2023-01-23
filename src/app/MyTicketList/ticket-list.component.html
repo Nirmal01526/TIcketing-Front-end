@@ -1,0 +1,51 @@
+<div class="ticket">
+    <img class="logo" src="../../assets/image/download.png">
+    <br><br>
+    <h1 style="font-weight:900;">My ticket list</h1>
+    <div class="dropdown" id="usericon">
+        <span><i class="fa fa-user" style="font-size:36px"></i></span>
+        <div class="dropdown-content">
+            <p class="p"><i class="fa fa-user" style="font-size:15px"></i> {{user}}</p>
+            <button (click)="onLogout()"><i class="fa fa-sign-out"></i>Logout</button>
+        </div>
+    </div>
+    <form [formGroup]="searchform" (click)="search()">
+        <label style="font-weight: 900; font-family: 'Times New Roman', Times, serif; font-size: 20px;"  for="search">Search</label>
+        <select id="myInput" class="form-control" formControlName="status">
+            <option value="Allticket">Allticket</option>
+            <option value="Open">Open</option>
+            <option value="Close">Close</option>
+            <option value="Pending">Pending</option>
+            <option value="Inprogress">Inprogress</option>
+            <option value="Not approved">Not_approved</option>
+        </select>
+    </form>
+
+    <button class="btn btn-primary" id="button" routerLink="/ticket">New ticket</button>
+</div>
+<div class="table">
+    <table class="table table boarded">
+        <thead class="">
+            <th scope="col">Ticket_id</th>
+            <th scope="col">Username</th>
+            <th scope="col">subject</th>
+            <th scope="col">Description</th>
+            <th scope="col">CreateAt</th>
+            <th scope="col">Status</th>
+            <th scope="col">Attachment</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ticket of ticketarray | paginate:{itemsPerPage:5, currentPage:page,totalItems: totalItems }">
+                <td>{{ticket.ticekt_id}}</td>
+                <td>{{ticket.username}}</td>
+                <td>{{ticket.subject}}</td>
+                <td>{{ticket.description}}</td>
+                <td>{{ticket.createAt | date:"dd-MM-yyyy"}}</td>
+                <td>{{ticket.status}}</td>
+                <td><a (click)="dowloadFilevalue(ticket.filename)">{{ticket.filename}}</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <button (click)="dfghj()">sdfghjk</button> -->
+    <pagination-controls (pageChange)="pagInation((page = $event))"></pagination-controls>
+</div>

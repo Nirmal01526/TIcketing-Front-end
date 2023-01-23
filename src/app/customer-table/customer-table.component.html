@@ -1,0 +1,38 @@
+<app-dashboard></app-dashboard>
+
+<div id="table">
+    <h1 class="headng"> Customer Table</h1><br><br><br>
+    <table class="table  table-striped table-bordered">
+        <thead class="table table-hover">
+            <tr>
+                <th scope="col">UserId</th>
+                <th scope="col">Username</th>
+                <th scope="col">EmailId</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Role</th>
+                <th scope="col">MobileNo</th>
+                <th scope="col">Password</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let us of staffArray | paginate:{itemsPerPage:5, currentPage:page,totalItems: totalItems }">
+                <td>{{ us.staff_id }}</td>
+                <td>{{ us.username }}</td>
+                <td>{{ us.email }}</td>
+                <td>{{ us.dob }}</td>
+                <td>{{ us.role }}</td>
+                <td>{{ us.mobileNo }}</td>
+                <td>{{ us.password }}</td>
+                <td>
+                    <button class="btn btn-primary"  [routerLink]="['/Staff','updateform',us.staff_id,'update']">Edit</button>
+                    <button class="btn btn-danger"  (click)="DeleteStaff(us.staff_id)">Delete</button>
+                </td>
+                <td>
+                    <button class="btn btn-success" [routerLink]="['/Staff','changepassword',us.staff_id]">change password</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="pagInation((page = $event))"></pagination-controls>
+</div>

@@ -1,0 +1,33 @@
+<div><app-dashboard></app-dashboard></div>
+
+<div class="row">
+    <div class="headings">
+        <h1 class="heads">Dashboard</h1>
+    </div><br><br><br><br>
+    <div class="col-2 mx-5">
+        <div class="card" >
+            <div class="card-header" value="open" [routerLink]="['/Staff','open']">Open Tickets</div>
+            <div class="card-body text-secondary">
+                <p class="card-text">{{Count.open}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-2 mx-5">
+
+        <div class="card" [routerLink]="['/Staff','close']">
+            <div class="card-header " >Close Tickets</div>
+            <div class="card-body text-secondary">
+                <p class="card-text">{{Count.close}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-2 mx-5">
+
+        <div class="card">
+            <div class="card-header" routerLink="/showTicket">Total Tickets</div>
+            <div class="card-body text-secondary">
+                <p class="card-text">{{Count.tickets}}</p>
+            </div>
+        </div>
+    </div>
+</div>

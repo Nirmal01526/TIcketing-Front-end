@@ -1,0 +1,31 @@
+<nav id="nav" class="navbar navbar-dark ">
+    <div>
+        <h2 class="support">Support Ticketing System</h2>
+    </div>
+    <div>
+        <h2 class="support1">{{user}}</h2>
+    </div>
+</nav>
+<div class="row">
+    <div class="col-2">
+        <div class="sidebar">
+            <div class="Heading"><br>
+                <span class="title">Company Name</span><br><br><br>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                   <li class="sidebart">
+                        <a href="#submenu2" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
+                            <i class="fs-4 bi-bootstrap"></i> <span class="ms-1 d-none d-sm-inline">Ticket</span></a>
+                        <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                            <li class="w-100"><br>
+                                <a href="/staffticketlist" class="nav-link px-5"> <span class="d-none d-sm-inline">TicketList</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="logout ">
+                    <p (click)="onLogout()">Logout</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

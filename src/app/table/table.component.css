@@ -1,0 +1,51 @@
+#table {
+
+    margin-left: 18%;
+    margin-top: -45%;
+    margin-right: 8%;
+
+}
+
+body {
+    background-color: rgb(239, 243, 242);
+    padding: 60px;
+    height: 100vh;
+    margin-top: -45%;
+
+}
+
+.c1 {
+    margin-top: -8%;
+    margin-left: 35%;
+    width: 35%;
+}
+
+.c2 {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    margin-top: 5%;
+}
+
+#form {
+    background-color: rgb(113, 155, 192);
+    padding: 2%;
+    border-radius: 5%;
+    width: 500px;
+    margin-top: -15%;
+    position: absolute;
+
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+table {
+    max-width: 100px;
+    max-height: 200px;
+}

@@ -1,0 +1,68 @@
+<app-staffdashboard></app-staffdashboard>
+<div>
+    <h1 class="heading">Ticket Details</h1>
+</div>
+<form [formGroup]="issueForm" (ngSubmit)="onsubmit()" id="form">
+
+    <input class="hide" type=text formControlName="username" readonly>
+    <br>
+    <label class="label">Username: </label>
+    <input class="input mx-2" type=text formControlName="username" readonly>
+    <br>
+    <label class="label mt-4">Subject:</label>
+
+    <input class=" mx-4" type="text" formControlName="subject" readonly>
+    <br><br>
+    <label class="label">Description</label><br>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="description"
+        readonly></textarea>
+    <div class="form-group ">
+        <label class="label">Status</label>
+        <select formControlName="status" class="form-control" aria-label="Default select example">
+            <option value="Open">Open</option>
+            <option value="Close">Close</option>
+            <option value="Pending">Pending</option>
+            <option value="Inprogress">Inprogress</option>
+            <option value="Not approved">Not_approved</option>
+        </select>
+    </div><br>
+    <div class="mb-3">
+       
+        <label class="custom-file-label" for="inputGroupFile01"  >Select File:</label><br>
+        <input type="file"  (change)="onchange($event)"  class="form-control" formControlName="filename">
+        <a (click)=" dowloadFilevalue(ticketArray.filename)">{{ticketArray.filename}}</a>
+    </div>
+   
+    <button class="btn btn-success">submit</button>
+    <button class="btn btn-danger mx-5" routerLink="/staffticketlist">cancel</button>
+</form>
+
+<!-- <div class="head">
+    <form class="row g-2" #form="ngForm" (submit)="onsubmit()">
+        <div>
+            <h4 class="heading1">Edit Doctor Details</h4>
+        </div>
+        <div class="col-3">
+            <label for="" class="form-label">Username:</label>
+            <input type="text" class="form-control" id="inputEmail4" name="username" [(ngModel)]="ticketArray.username">
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-3">
+            <label for="" class="form-label">Subject:</label>
+            <input type="text" class="form-control" id="inputPassword4" name="subject"
+                [(ngModel)]="ticketArray.subject">
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="col-3">
+            <label for="" class="form-label">Description:</label>
+            <input type="text" class="form-control" id="inputAddress" name="description"
+                [(ngModel)]="ticketArray.description">
+        </div>
+        
+        <div class="file mb-3 col-3 " style="margin-top: 40px;">
+            <label class="custom-file-label" for="inputGroupFile01">Select File:</label><br>
+            <input type="file" style="width: 300px;" name="files" (change)="onchange($event)"  [(ngModel)]="ticketArray.filename" class="form-control">
+        </div>
+        <div class="col-12"><br>
+            <button id="btnsave" type="submit" class="btn btn-primary">save</button>
+        </div>
+    </form>
+</div> -->
